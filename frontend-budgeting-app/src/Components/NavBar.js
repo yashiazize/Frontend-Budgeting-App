@@ -4,7 +4,7 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <nav>
-      <NavLink to="/transactions">Budget App</NavLink>
+      <NavLink to="/">Budget App</NavLink>
       <NavLink to="/transactions/new">New Transaction</NavLink>
     </nav>
   );
