@@ -1,11 +1,10 @@
-import Details from "./components/Details"
+import Details from "../Components/Details"
 
-const Display = () => {
+const Display = ({deleteTransaction}) => {
     return (
         <div>
-            
             <section>
-                <Details/>
+                <Details deleteTransaction={deleteTransaction}/>
             </section>
         </div>
     )

@@ -2,3 +2,16 @@
   text-align: center;
 }
 
+.transactionsComp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.transactionsComp li {
+  list-style-type: none;
+  text-align: left;
+  justify-content: flex-start;
+  
+}
+

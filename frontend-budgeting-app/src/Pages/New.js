@@ -1,10 +1,10 @@
-import NewLogForm from "../Components/NewLogForm";
+import NewForm from "../Components/NewForm";
 
 const New = ({ addTransaction }) => {
   return (
     <section>
       <h2> Add a new item</h2>
-      <NewLogForm addTransaction={addTransaction} />
+      <NewForm addTransaction={addTransaction} />
     </section>
   );
 };
