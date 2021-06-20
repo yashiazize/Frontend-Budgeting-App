@@ -35,6 +35,7 @@ const NewForm = (props) => {
         <label htmlFor="from">From:</label>
         <input
           id="from"
+          required
           value={transaction.from}
           onChange={handleChange}
           type="text"
@@ -42,6 +43,7 @@ const NewForm = (props) => {
         />
         <label htmlFor="date">Date:</label>
         <input
+          required
           id="date"
           value={transaction.date}
           onChange={handleChange}
@@ -54,6 +56,7 @@ const NewForm = (props) => {
           value={transaction.name}
           onChange={handleChange}
           type="text"
+          required
           placeholder="Name..."
         />
         <label htmlFor="amount">Amount:</label>
@@ -62,6 +65,7 @@ const NewForm = (props) => {
           value={transaction.amount}
           onChange={handleNumber}
           type="text"
+          required
           placeholder="Amount..."
         />
         <br/>
