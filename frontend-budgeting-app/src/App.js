@@ -18,8 +18,9 @@ const App = () => {
   const [transactions, setTransactions] = useState([]);
 
   const addTransaction = async (newTransaction) => {
+    let res;
     try {
-      const res = await axios.post(`${API}/transactions`, newTransaction);
+      res = await axios.post(`${API}/transactions`, newTransaction);
       setTransactions((prevTransactions) => [...prevTransactions, res.data]);
     } catch (error) {
       console.log(error);
@@ -50,8 +51,9 @@ const App = () => {
   };
 
   const fetchLogs = async () => {
+    let res;
     try {
-      const res = await axios.get(`${API}/transactions`);
+      res = await axios.get(`${API}/transactions`);
       setTransactions(res.data);
     } catch (error) {
       console.log(error);

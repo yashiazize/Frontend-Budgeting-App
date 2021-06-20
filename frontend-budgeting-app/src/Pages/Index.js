@@ -1,4 +1,5 @@
 import Transactions from "../Components/Transactions";
+import "../App.css"
 
 const Index = ({ transactions}) => {
   const totalTransactions = () => {
@@ -12,7 +13,7 @@ const Index = ({ transactions}) => {
   const total = totalTransactions();
 
   return (
-    <section>
+    <section className="indexContainer">
       <h2>Bank Account Total: ${total}</h2>
       <ul>
         <Transactions transactions={transactions} />

@@ -21,7 +21,7 @@ const NewForm = (props) => {
   };
 
   return (
-    <section>
+    <section className="newFormContainer">
       <form onSubmit={handleSubmit}>
         <label htmlFor="from">From:</label>
         <input
@@ -52,10 +52,10 @@ const NewForm = (props) => {
           id="amount"
           value={transaction.amount}
           onChange={handleChange}
-          type="text"
+          type="number"
           placeholder="Amount..."
         />
-        <input type="submit"/>
+        <input className="newFormButton" type="submit"/>
       </form>
     </section>
   );

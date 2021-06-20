@@ -1,5 +1,6 @@
 import Details from "../Components/Details"
 
+
 const Display = ({deleteTransaction}) => {
     return (
         <div>
