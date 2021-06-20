@@ -1,16 +1,24 @@
-import { useState } from "react";
-import { withRouter } from "react-router-dom";
+import axios from "axios";
+import { useState, useEffect } from "react";
+import { useParams, withRouter } from "react-router-dom";
+import { apiURL } from "../utl/apiURL";
+const API = apiURL();
 
 const NewForm = (props) => {
+  const { index } = useParams();
   const [transaction, setTransaction] = useState({
     from: "",
     date: "",
     name: "",
-    amount: 0,
+    amount: "",
   });
 
   const handleChange = (e) => {
     setTransaction({...transaction, [e.target.id]: e.target.value})
+  }
+  
+  const handleNumber = (e) => {
+    setTransaction({...transaction, amount: Number(e.target.value)})
   }
 
   const handleSubmit = (e) => {
@@ -19,6 +27,7 @@ const NewForm = (props) => {
     addTransaction(transaction);
     history.push("/")
   };
+
 
   return (
     <section className="newFormContainer">
@@ -51,10 +60,11 @@ const NewForm = (props) => {
         <input
           id="amount"
           value={transaction.amount}
-          onChange={handleChange}
-          type="number"
+          onChange={handleNumber}
+          type="text"
           placeholder="Amount..."
         />
+        <br/>
         <input className="newFormButton" type="submit"/>
       </form>
     </section>

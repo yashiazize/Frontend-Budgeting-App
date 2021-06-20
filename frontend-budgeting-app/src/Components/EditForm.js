@@ -73,6 +73,7 @@ const EditForm = (props) => {
           type="text"
           placeholder="Amount..."
         />
+         <br/>
         <input type="submit" />
       </form>
       <Link to={`/transactions/${index}`}> <button>Nevermind</button></Link>
