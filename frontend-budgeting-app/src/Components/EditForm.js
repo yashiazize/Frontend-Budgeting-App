@@ -12,12 +12,16 @@ const EditForm = (props) => {
     from: "",
     date: "",
     name: "",
-    amount: 0,
+    amount: "",
   });
 
   const handleChange = (e) => {
     setTransaction({ ...transaction, [e.target.id]: e.target.value });
   };
+
+  const handleNumber = (e) => {
+    setTransaction({...transaction, amount: Number(e.target.value)})
+  }
 
   const fetchTransactions = async () => {
     try {
@@ -69,7 +73,7 @@ const EditForm = (props) => {
         <input
           id="amount"
           value={transaction.amount}
-          onChange={handleChange}
+          onChange={handleNumber}
           type="text"
           placeholder="Amount..."
         />
