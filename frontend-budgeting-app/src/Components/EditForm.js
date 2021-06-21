@@ -50,6 +50,7 @@ const EditForm = (props) => {
           id="from"
           value={transaction.from}
           onChange={handleChange}
+          required
           type="text"
           placeholder="From..."
         />
@@ -58,6 +59,7 @@ const EditForm = (props) => {
           id="date"
           value={transaction.date}
           onChange={handleChange}
+          required
           type="text"
           placeholder="Date..."
         />
@@ -66,6 +68,7 @@ const EditForm = (props) => {
           id="name"
           value={transaction.name}
           onChange={handleChange}
+          required
           type="text"
           placeholder="Name..."
         />
@@ -73,6 +76,7 @@ const EditForm = (props) => {
         <input
           id="amount"
           value={transaction.amount}
+          required
           onChange={handleNumber}
           type="text"
           placeholder="Amount..."
