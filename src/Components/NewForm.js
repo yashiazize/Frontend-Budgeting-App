@@ -1,11 +1,9 @@
-import axios from "axios";
-import { useState, useEffect } from "react";
-import { useParams, withRouter } from "react-router-dom";
-import { apiURL } from "../utl/apiURL";
-const API = apiURL();
+
+import { useState} from "react";
+import { withRouter } from "react-router-dom";
+
 
 const NewForm = (props) => {
-  const { index } = useParams();
   const [transaction, setTransaction] = useState({
     from: "",
     date: "",

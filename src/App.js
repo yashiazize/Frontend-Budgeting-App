@@ -62,7 +62,7 @@ const App = () => {
 
   useEffect(() => {
     fetchLogs();
-  }, [transactions]);
+  }, []);
 
   return (
     <main className="App">
