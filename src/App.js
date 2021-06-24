@@ -27,7 +27,6 @@ const App = () => {
     }
   };
 
-
   const editTransaction = async (editedTransaction, index) => {
     try {
       await axios.put(`${API}/transactions/${index}`, editedTransaction);
@@ -50,26 +49,26 @@ const App = () => {
     }
   };
 
-  const fetchLogs = async () => {
-    let res;
-    try {
-      res = await axios.get(`${API}/transactions`);
-      setTransactions(res.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   useEffect(() => {
-    fetchLogs();
-  }, []);
+    const fetchLogs = async () => {
+      let res;
+      try {
+        res = await axios.get(`${API}/transactions`);
+        setTransactions(res.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    return fetchLogs();
+  }, [transactions]);
 
   return (
     <main className="App">
       <NavBar />
       <Switch>
         <Route exact path="/">
-          <Index transactions={transactions}  />
+          <Index transactions={transactions} />
         </Route>
         <Route path="/transactions/new">
           <New addTransaction={addTransaction} />
